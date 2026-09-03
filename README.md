@@ -1,44 +1,51 @@
-# Warehouse Inventory Robot ROS 2 Workspace
+# Warehouse Inventory Robot (ROS 2 Humble)
 
-This is the full ROS 2 workspace layout for the Major Project - 1 assignment.
+This repository contains a ROS 2 warehouse inventory robot simulation project built with Gazebo and RViz.
 
-## Folder Pattern
+## Project Overview
+
+The robot patrols warehouse zones, publishes inventory actions, avoids obstacles using lidar, and updates zone stock through a custom inventory manager node.
+
+## Repository Structure
 
 ```text
-warehouse_ws/
-  README.md
-  src/
-    warehouse_inventory_robot/
-      package.xml
-      CMakeLists.txt
-      launch/
-      msg/
-      urdf/
-      worlds/
-      rviz/
-      docs/
-      warehouse_inventory_robot/
+Warehouse_inventory_robot/
+├── img/
+│   ├── architecture.png
+│   └── inventory_flow.png
+└── warehouse_ws/
+    └── src/
+        └── warehouse_inventory_robot/
 ```
 
-## Build
+Main package path:
 
-Run these commands on Ubuntu 22.04 with ROS 2 Humble:
+```text
+warehouse_ws/src/warehouse_inventory_robot
+```
+
+Detailed package documentation:
+
+- [`warehouse_ws/src/warehouse_inventory_robot/README.md`](warehouse_ws/src/warehouse_inventory_robot/README.md)
+
+## Project Photos
+
+### System Architecture
+
+![Warehouse Robot Architecture](img/architecture.png)
+
+### Inventory Process Flow
+
+![Warehouse Inventory Flow](img/inventory_flow.png)
+
+## Quick Start
+
+Run on Ubuntu 22.04 with ROS 2 Humble.
 
 ```bash
 cd warehouse_ws
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 source install/setup.bash
-```
-
-## Run
-
-```bash
 ros2 launch warehouse_inventory_robot simulation.launch.py
-```
-
-The package source is inside:
-
-```text
-warehouse_ws/src/warehouse_inventory_robot
 ```
