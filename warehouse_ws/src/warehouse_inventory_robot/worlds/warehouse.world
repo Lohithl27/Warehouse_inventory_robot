@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="warehouse_inventory_world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="warehouse_outer_walls">
+      <static>true</static>
+      <link name="walls">
+        <collision name="north">
+          <pose>0 3.2 0.5 0 0 0</pose>
+          <geometry><box><size>6.5 0.12 1.0</size></box></geometry>
+        </collision>
+        <visual name="north_visual">
+          <pose>0 3.2 0.5 0 0 0</pose>
+          <geometry><box><size>6.5 0.12 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.45 1</ambient></material>
+        </visual>
+        <collision name="south">
+          <pose>0 -3.2 0.5 0 0 0</pose>
+          <geometry><box><size>6.5 0.12 1.0</size></box></geometry>
+        </collision>
+        <visual name="south_visual">
+          <pose>0 -3.2 0.5 0 0 0</pose>
+          <geometry><box><size>6.5 0.12 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.45 1</ambient></material>
+        </visual>
+        <collision name="east">
+          <pose>3.2 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.12 6.5 1.0</size></box></geometry>
+        </collision>
+        <visual name="east_visual">
+          <pose>3.2 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.12 6.5 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.45 1</ambient></material>
+        </visual>
+        <collision name="west">
+          <pose>-3.2 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.12 6.5 1.0</size></box></geometry>
+        </collision>
+        <visual name="west_visual">
+          <pose>-3.2 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.12 6.5 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.45 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="rack_row_1">
+      <static>true</static>
+      <pose>0 1.05 0.45 0 0 0</pose>
+      <link name="rack">
+        <collision name="collision"><geometry><box><size>4.2 0.25 0.9</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>4.2 0.25 0.9</size></box></geometry>
+          <material><ambient>0.35 0.22 0.12 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="rack_row_2">
+      <static>true</static>
+      <pose>0 -1.05 0.45 0 0 0</pose>
+      <link name="rack">
+        <collision name="collision"><geometry><box><size>4.2 0.25 0.9</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>4.2 0.25 0.9</size></box></geometry>
+          <material><ambient>0.35 0.22 0.12 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="small_obstacle">
+      <static>true</static>
+      <pose>0.0 0.0 0.18 0 0 0</pose>
+      <link name="box">
+        <collision name="collision"><geometry><box><size>0.45 0.45 0.36</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>0.45 0.45 0.36</size></box></geometry>
+          <material><ambient>0.8 0.15 0.12 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="inventory_zone_A1">
+      <static>true</static>
+      <pose>2.0 1.4 0.01 0 0 0</pose>
+      <link name="zone">
+        <visual name="visual">
+          <geometry><box><size>0.7 0.7 0.02</size></box></geometry>
+          <material><ambient>0.1 0.7 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="inventory_zone_B2">
+      <static>true</static>
+      <pose>2.0 -1.4 0.01 0 0 0</pose>
+      <link name="zone">
+        <visual name="visual">
+          <geometry><box><size>0.7 0.7 0.02</size></box></geometry>
+          <material><ambient>0.1 0.3 0.9 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="inventory_zone_C3">
+      <static>true</static>
+      <pose>-2.0 -1.4 0.01 0 0 0</pose>
+      <link name="zone">
+        <visual name="visual">
+          <geometry><box><size>0.7 0.7 0.02</size></box></geometry>
+          <material><ambient>0.9 0.6 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="inventory_zone_D4">
+      <static>true</static>
+      <pose>-2.0 1.4 0.01 0 0 0</pose>
+      <link name="zone">
+        <visual name="visual">
+          <geometry><box><size>0.7 0.7 0.02</size></box></geometry>
+          <material><ambient>0.8 0.2 0.6 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
